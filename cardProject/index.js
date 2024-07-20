@@ -1,19 +1,16 @@
-const addCardBtn = document.querySelector('.add-card-button')
-const container = document.querySelector('.container')
-
-// const cardsList = document.querySelectorAll('.card')
+const addCardBtn = document.querySelector(".addcardbtn")
+const container = document.querySelector(".container")
 
 let count = 1
 
-addCardBtn.addEventListener('click', () => {
+addCardBtn.addEventListener('click',()=>{
     const newCard = document.createElement('div')
-    newCard.classList.add('addCard')
-    newCard.innerText = count++
+    newCard.classList.add('card')
+    newCard.innerHTML= count++
     container.append(newCard)
 })
 
-container.addEventListener('click', (e) => {
-    if(e.target !== container) {
+container.addEventListener('click',(e)=>{
+    if(e.target !== container)
         e.target.remove()
-    }
 })
